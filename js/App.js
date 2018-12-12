@@ -11,6 +11,7 @@ import {
   Text 
 } from 'native-base';
 import AppleHealthKit from 'rn-apple-healthkit';
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
 let options = {
   permissions: {
@@ -57,7 +58,8 @@ export default class App extends Component {
                 style={{color: 'orange'}}/>
               {/* <Text>Nutrition</Text> */}
             </Button>
-            <Button>
+            <Button
+              onPress={() => this.props.navigation.navigate('Settings')}>
               <Icon name="settings" />
               {/* <Text>Settings</Text> */}
             </Button>
