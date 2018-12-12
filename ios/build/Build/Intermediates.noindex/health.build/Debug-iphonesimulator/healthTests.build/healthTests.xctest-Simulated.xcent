@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>46UNFSHQD2.org.reactjs.native.example.healthTests</string>
+	<string>46UNFSHQD2.org.dema.health</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>46UNFSHQD2.org.reactjs.native.example.healthTests</string>
+		<string>46UNFSHQD2.org.dema.health</string>
 	</array>
 </dict>
 </plist>
