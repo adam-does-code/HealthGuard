@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string></string>
+	<string>alsdjkflkasdfjladksjfalskdfja;sdfkjsa;ldfkjdl;fjklds;fjsdlk</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string></string>
+	<string>d;lskafjaslkfjasdlkfjasdlkfjadsfl;kjadsflkjasdf;lkajsdflkajdsfl;kadjsf</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>health</string>
+	<string>Health Guard</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
