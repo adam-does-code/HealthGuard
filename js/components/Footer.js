@@ -23,20 +23,23 @@ class HealthFooter extends Component {
               <Icon name="home" />
               <Text>Today</Text>
             </Button>
-            <Button>
+            <Button
+            active={this.props.activeScreen === 'Activity'}>
               <Icon 
                 name="heart"
                 style={{color: 'red'}}/>
               <Text>Activity</Text>
             </Button>
-            <Button>
+            <Button
+            active={this.props.activeScreen === 'Nutrition'}>
               <Icon 
                 name="nutrition"
                 style={{color: 'orange'}}
                 />
               <Text>Nutrition</Text>
             </Button>
-            <Button>
+            <Button
+            active={this.props.activeScreen === 'Settings'}>
               <Icon name="settings" />
               <Text>Settings</Text>
             </Button>

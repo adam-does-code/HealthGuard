@@ -10,7 +10,6 @@ import {
   Icon,
   Text 
 } from 'native-base';
-import AppleHealthKit from 'rn-apple-healthkit';
 
 let options = {
   permissions: {
@@ -19,17 +18,10 @@ let options = {
   }
 };
 
-export default class App extends Component {
+export default class Settings extends Component {
 
   constructor(props) {
     super(props);
-    AppleHealthKit.initHealthKit(options, (err, results) => {
-      if (err) {
-          console.log("error initializing Healthkit: ", err);
-          return;
-      }
-  
-  });
   }
 
   render() {
@@ -39,30 +31,6 @@ export default class App extends Component {
         <WebView 
           source={{uri: 'http://dabuadas.me/data-visuals'}}
         />
-        <Footer>
-          <FooterTab>
-            <Button>
-              <Icon name="home" />
-              {/* <Text>Today</Text> */}
-            </Button>
-            <Button>
-              <Icon 
-                name="heart"
-                style={{color: 'red'}}/>
-              {/* <Text>Activity</Text> */}
-            </Button>
-            <Button>
-              <Icon 
-                name="nutrition"
-                style={{color: 'orange'}}/>
-              {/* <Text>Nutrition</Text> */}
-            </Button>
-            <Button>
-              <Icon name="settings" />
-              {/* <Text>Settings</Text> */}
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     );
   }

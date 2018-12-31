@@ -18,9 +18,10 @@ class HealthProgressBar extends Component {
   render() {
     const barWidth = Dimensions.get('screen').width - 30;
     return (
-      <View>
+      <View style={styles.container}>
       <Text style={styles.label}>{this.props.title}</Text>
       <ProgressBarAnimated
+        {...this.props.customColor}
         width={barWidth}
         height={50}
         value={this.props.percentCompleted}
@@ -40,8 +41,11 @@ HealthProgressBar.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    paddingBottom: 15,
+  },
   label: {
-    color: '#999',
+    // color: '#999',
     fontSize: 14,
     fontWeight: '500',
     marginBottom: 10,
