@@ -10,7 +10,7 @@
     "native-base": "2.8.1",
     "react": "16.6.1",
     "react-native": "0.57.7",
-    "react-native-gesture-handler": "1.0.10",
+    "react-native-gesture-handler": "1.0.12",
     "react-native-progress-bar-animated": "De-ma/react-native-progress-bar-animated",
     "react-navigation": "3.0.8",
     "rn-apple-healthkit": "0.6.4"
