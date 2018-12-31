@@ -11,8 +11,8 @@ import {
   Content, 
 } from 'native-base';
 import AppleHealthKit from 'rn-apple-healthkit';
-import ProgressBarAnimated from 'react-native-progress-bar-animated';
 import HealthFooter  from './components/Footer';
+import HealthProgressBar  from './components/ProgressBar';
 
 let options = {
   permissions: {
@@ -66,73 +66,21 @@ export default class App extends Component {
 
   render() {
 
-    const barWidth = Dimensions.get('screen').width - 30;
-    const progressCustomStyles = {
-      backgroundColor: 'red', 
-      borderRadius: 0,
-      borderColor: 'orange',
-    };
+
 
     return (
       <Container>
         <Content>
-        <View style={styles.container}>
-        <View>
-          <Text style={styles.label}>Steps Goal</Text>
-          <ProgressBarAnimated
-            width={barWidth}
-            height={50}
-            value={this.state.steps}
-            backgroundColorOnComplete="#6CC644"
-            description={this.state.steps + " Steps"}
-          />
-          <View style={styles.buttonContainer}>
-            <View style={styles.buttonInner}>
-              <Button
-                title="Increase 20%"
-                onPress={this.increase.bind(this, 'steps', 20)}
-              />
-            </View>
+          <View style={styles.container}>
+            <HealthProgressBar 
+              title={"Steps"}
+              percentCompleted={this.state.steps}
+              description={ this.state.steps + " Steps"}/>
+            <HealthProgressBar 
+              title={"Distance "}
+              percentCompleted={this.state.distance}
+              description={ this.state.distance + " Km"}/>
           </View>
-        </View>
-        <View style={styles.separator} />
-        <View>
-          <Text style={styles.label}>Distance Goal</Text>
-          <ProgressBarAnimated
-            width={barWidth}
-            height={50}
-            value={this.state.distance}
-            description={this.state.distance + " Km"}
-
-          />
-          <View style={styles.buttonContainer}>
-            <View style={styles.buttonInner}>
-              <Button
-                title="Increase 50%"
-                onPress={this.increase.bind(this, 'distance', 50)}
-              />
-            </View>
-          </View>
-        </View>
-        <View style={styles.separator} />
-        <View>
-          <Text style={styles.label}>Custom style with max value in 30%</Text>
-          <ProgressBarAnimated
-            {...progressCustomStyles}
-            width={barWidth}
-            maxValue={30}
-            value={this.state.progressCustomized}
-          />
-          <View style={styles.buttonContainer}>
-            <View style={styles.buttonInner}>
-              <Button
-                title="Increase 10%"
-                onPress={this.increase.bind(this, 'progressCustomized', 10)}
-              />
-            </View>
-          </View>
-        </View>
-      </View>
         </Content>
         <HealthFooter
         activeScreen={'Today'}/>

@@ -8,11 +8,6 @@ import {
   Text 
 } from 'native-base';
 
-
-// HealthFooter.defaultProps = {
-//   activeScreen: 'Today',
-// };
-
 class HealthFooter extends Component {
 
   constructor(props) {
