@@ -19,6 +19,10 @@ let options = {
 };
 
 export default class Today extends Component {
+  static navigationOptions = {
+    title: 'Today',
+  };
+
   constructor(props) {
     super(props);
     AppleHealthKit.initHealthKit(options, (err) => {
@@ -100,7 +104,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    marginTop: 50,
     padding: 15,
   }
 });
