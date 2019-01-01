@@ -1,5 +1,6 @@
+import { StyleSheet } from 'react-native'; 
 
-const styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
@@ -7,16 +8,21 @@ const styles = StyleSheet.create({
     padding: 15,
   }, 
   segment: {
-    // color: 'red',
     backgroundColor: 'white',
-    // marginTop: 50
-
   }, 
   subTitle: {
     fontSize: 15,
-    padding: 15,
-    // paddingRight: 15,
-    
+    padding: 15,    
     textAlign: 'center',
+  },
+  form: {
+    paddingLeft: 30,
+    paddingRight: 50,
+    paddingTop: 10,
+  },
+  button: {
+    marginTop: 250,
+    width: 350,
+    marginLeft: 30,
   }
 });
