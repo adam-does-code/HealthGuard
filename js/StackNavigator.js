@@ -1,5 +1,5 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import Today  from './today/index';
+import Today  from './today/container';
 import Settings  from './settings/index';
 import Onboarding from './Onboarding/container';
 
@@ -11,6 +11,9 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Onboarding',
+    defaultNavigationOptions: {
+      header: null,
+    },
   }
 );
 

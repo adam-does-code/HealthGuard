@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
   },
   label: {
-    // color: '#999',
     fontSize: 14,
     fontWeight: '500',
     marginBottom: 10,

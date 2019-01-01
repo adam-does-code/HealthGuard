@@ -6,51 +6,19 @@ import {
 import { 
   Container, 
   Content, 
+  Header,
 } from 'native-base';
-import AppleHealthKit from 'rn-apple-healthkit';
-
 import HealthFooter  from '../components/Footer';
 import HealthProgressBar  from '../components/ProgressBar';
+import styles from './styles';
 
-let options = {
-  permissions: {
-      read: ["ActiveEnergyBurned", "Carbohydrates", "FatTotal", "Protein", "Water", "FlightsClimbed", "DistanceWalkingRunning", "StepCount", "Steps"]
-    }
-};
 
-export default class Today extends Component {
-  static navigationOptions = {
-    title: 'Today',
-  };
+export default class TodayView extends Component {
 
-  constructor(props) {
-    super(props);
-    AppleHealthKit.initHealthKit(options, (err) => {
-      if (err) {
-          console.log("error initializing Healthkit: ", err);
-          return;
-      }
-     });
-
-     const todayDate = new Date(Date.now());
-
-    AppleHealthKit.getStepCount({ date: todayDate } , (err, stepsResult) => {
-      if (err) {
-          return;
-      }
-      this.setState({ steps: stepsResult.value })
-    });
-
-    AppleHealthKit.getDistanceWalkingRunning( {}, (err, distanceResult) => {
-      if (err) {
-        return;
-      }
-      this.setState({distance: distanceResult.value / 1000 })
-    });
-  }
-
+  //remove
   state = {
     steps: 0,
+    stepsGoal: 5000,
     distance: 0,
     restingCalories: 0,
     protein: 0,
@@ -61,11 +29,12 @@ export default class Today extends Component {
   render() {
     return (
       <Container>
+        <Header/>
         <Content>
           <View style={styles.container}>
             <HealthProgressBar 
               title={"Steps"}
-              percentCompleted={this.state.steps}
+              percentCompleted={(this.state.steps / this.state.stepsGoal) * 100}
               description={ this.state.steps + " Steps"}/>
             <HealthProgressBar 
               title={"Distance "}
@@ -100,10 +69,3 @@ export default class Today extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFF',
-    padding: 15,
-  }
-});

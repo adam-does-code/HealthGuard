@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SafeAreaView } from 'react-native'; 
+import { SafeAreaView, View } from 'react-native'; 
 import styles from './styles';
 
 import { 
@@ -93,12 +93,13 @@ export default class OnboardingView extends Component {
               returnKeyType={"done"}/>
             </Item>
           </Form>
+          <View style={styles.button}>
           <Button 
             onPress={this.props.onPress}
-            style={styles.button}
-            round>
-            <Text style={{marginLeft: 130}}>Finish!</Text>
+            block>
+            <Text>Finish!</Text>
           </Button>
+          </View>
        </SafeAreaView>
     );
   }
@@ -116,5 +117,3 @@ export default class OnboardingView extends Component {
     secondpageactive:true})
     }
 }
-
-

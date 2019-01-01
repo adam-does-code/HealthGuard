@@ -11,6 +11,8 @@ import {
   Text 
 } from 'native-base';
 
+import HealthFooter from '../components/Footer';
+
 
 export default class Settings extends Component {
   static navigationOptions = {
@@ -24,6 +26,11 @@ export default class Settings extends Component {
   render() {
     return (
       <Container>
+        <Header/>
+        <Text>Settings</Text>
+        <HealthFooter
+          activeScreen={'Settings'}
+          navigation={this.props.navigation}/>
       </Container>
     );
   }

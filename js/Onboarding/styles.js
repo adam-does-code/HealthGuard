@@ -21,8 +21,8 @@ export default StyleSheet.create({
     paddingTop: 10,
   },
   button: {
-    marginTop: 250,
-    width: 350,
-    marginLeft: 30,
+    marginTop: 170,
+    paddingLeft: 15,
+    paddingRight: 15,
   }
 });
