@@ -19,19 +19,22 @@ class HealthFooter extends Component {
         <Footer>
           <FooterTab>
             <Button
-            active={this.props.activeScreen === 'Today'}>
+            active={this.props.activeScreen === 'Today'}
+            onPress={() => this.props.navigation.navigate("Today")}>
               <Icon name="home" />
               <Text>Today</Text>
             </Button>
             <Button
-            active={this.props.activeScreen === 'Activity'}>
+            active={this.props.activeScreen === 'Activity'}
+            onPress={() => this.props.navigation.navigate("Activity")}>
               <Icon 
                 name="heart"
                 style={{color: 'red'}}/>
               <Text>Activity</Text>
             </Button>
             <Button
-            active={this.props.activeScreen === 'Nutrition'}>
+            active={this.props.activeScreen === 'Nutrition'}
+            onPress={() => this.props.navigation.navigate("Nutrition")}>
               <Icon 
                 name="nutrition"
                 style={{color: 'orange'}}
@@ -39,7 +42,8 @@ class HealthFooter extends Component {
               <Text>Nutrition</Text>
             </Button>
             <Button
-            active={this.props.activeScreen === 'Settings'}>
+            active={this.props.activeScreen === 'Settings'}
+            onPress={() => this.props.navigation.navigate("Settings")}>
               <Icon name="settings" />
               <Text>Settings</Text>
             </Button>
@@ -51,6 +55,7 @@ class HealthFooter extends Component {
 
 HealthFooter.propTypes = {
   activeScreen: PropTypes.oneOf(['Today', 'Activity', 'Nutrition', 'Settings']),
+  navigation: PropTypes.object,
 };
 
 export default HealthFooter;

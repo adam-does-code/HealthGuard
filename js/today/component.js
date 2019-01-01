@@ -63,7 +63,8 @@ export default class TodayView extends Component {
           </View>
         </Content>
         <HealthFooter
-        activeScreen={'Today'}/>
+        activeScreen={'Today'}
+        navigation={this.props.navigation}/>
       </Container>
     );
   }

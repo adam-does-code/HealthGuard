@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AsyncStorage } from 'react-native';
 import OnboardingView from './component';
 import AppleHealthKit from 'rn-apple-healthkit';
-import Today from '../today/container';
+import Today from '../Today/container';
 import { Spinner } from 'native-base';
 
 let options = {

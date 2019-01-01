@@ -41,7 +41,8 @@ export default class Today extends Component {
 
   render() {
     return (
-      <TodayView/>
+      <TodayView
+      navigation={this.props.navigation}/>
     );
   }
 }
