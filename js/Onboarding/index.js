@@ -12,14 +12,14 @@ import {
   Button,
   Text,
   Title,
-  Subtitle
+  Subtitle,
+  Footer,
 } from 'native-base';
 
 export default class Onboarding extends Component {
   static navigationOptions = {
     header: null,
   };
-  //remove nav header
 
   constructor(props) {
     super(props);
@@ -33,9 +33,11 @@ export default class Onboarding extends Component {
     };
   }
 
-  _focusNextField(nextField) {
-    this.refs[nextField]._root.focus()
+  focusTheField = (id) => {
+    this.inputs[id]._root.focus();
   }
+
+  inputs = {};
 
   render() {
     const page = this.state.page ;
@@ -67,34 +69,37 @@ export default class Onboarding extends Component {
         </Segment>
         <Form style={styles.form}>
         <Item floatingLabel>
-  <Label>First Name</Label>
-  <Input
-    getRef={input => {
-      this.firstNameRef = input;
-    }}
-    onSubmitEditing={() => {
-      this.lastNameRef._root.focus();
-    }}
-    returnKeyType={"next"}
-  />
-</Item>
-<Item fixedLabel>
-  <Label>First Name</Label>
-  <Input
-    ref={input => {
-      this.lastNameRef = input;
-    }}
-    onSubmitEditing={() => {
-      this.lastNameRef._root.focus();
-    }}
-    returnKeyType={"next"}
-  />
-</Item>
-            <Item floatingLabel last>
-              <Label>Age</Label>
-              <Input keyboardType="numeric"/>
+          <Label>Weight</Label>
+          <Input
+            keyboardType="numeric"
+            blurOnSubmit={ false }
+            returnKeyType={ 'next' }
+            onSubmitEditing={() => { this.focusTheField('field2'); }}
+          />
+        </Item>
+        <Item floatingLabel>
+          <Label>Height</Label>
+          <Input
+            keyboardType="numeric"
+            blurOnSubmit={ false }
+            getRef={input => { this.inputs['field2'] = input }}
+            onSubmitEditing={() => { this.focusTheField('field3'); }}
+            returnKeyType={"next"}/>
+        </Item>
+        <Item floatingLabel last>
+            <Label>Age</Label>
+            <Input 
+              keyboardType="numeric"
+              getRef={input => { this.inputs['field3'] = input }}
+              returnKeyType={"done"}/>
             </Item>
           </Form>
+          <Button 
+            onPress={() => this.props.navigation.navigate('Today')}
+            style={styles.button}
+            round>
+            <Text style={{marginLeft: 110}}>Finish!</Text>
+          </Button>
        </SafeAreaView>
     );
   }
@@ -114,7 +119,6 @@ export default class Onboarding extends Component {
 }
 
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -123,22 +127,22 @@ const styles = StyleSheet.create({
     padding: 15,
   }, 
   segment: {
-    // color: 'red',
     backgroundColor: 'white',
-    // marginTop: 50
-
   }, 
   subTitle: {
     fontSize: 15,
-    padding: 15,
-    // paddingRight: 15,
-    
+    padding: 15,    
     textAlign: 'center',
   },
   form: {
     paddingLeft: 30,
     paddingRight: 50,
     paddingTop: 10,
+  },
+  button: {
+    marginTop: 275,
+    width: 300,
+    marginLeft: 35,
   }
 });
 
