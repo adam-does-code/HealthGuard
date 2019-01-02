@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {   
   View,
   StyleSheet
@@ -15,16 +16,14 @@ import styles from './styles';
 
 export default class TodayView extends Component {
 
-  //remove
-  state = {
-    steps: 0,
-    stepsGoal: 5000,
-    distance: 0,
-    restingCalories: 0,
-    protein: 0,
-    carbohydrates: 0,
-    fat: 0,
+  propTypes = {
+    steps: PropTypes.number.isRequired,
+    distance: PropTypes.number.isRequired,
   };
+
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
@@ -34,13 +33,15 @@ export default class TodayView extends Component {
           <View style={styles.container}>
             <HealthProgressBar 
               title={"Steps"}
-              percentCompleted={(this.state.steps / this.state.stepsGoal) * 100}
-              description={ this.state.steps + " Steps"}/>
+              percentCompleted={this.props.steps}
+              // description={ this.props.steps + " Steps"}
+              customColor={ {backgroundColor: 'red'} }/>
             <HealthProgressBar 
               title={"Distance "}
-              percentCompleted={this.state.distance}
-              description={ this.state.distance + " Km"}/>
-            <HealthProgressBar 
+              percentCompleted={this.props.distance}
+              // description={ this.props.distance + " Km"}
+              customColor={ {backgroundColor: 'red'} }/>
+            {/* <HealthProgressBar 
               title={"Resting Calories"}
               percentCompleted={this.state.restingCalories}
               description={ this.state.restingCalories + " Cal"}
@@ -59,7 +60,7 @@ export default class TodayView extends Component {
               title={"Fat"}
               percentCompleted={this.state.restingCalories}
               description={ this.state.restingCalories + " Cal"}
-              customColor={ {backgroundColor: 'red'} }/>
+              customColor={ {backgroundColor: 'red'} }/> */}
           </View>
         </Content>
         <HealthFooter

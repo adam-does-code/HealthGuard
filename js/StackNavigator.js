@@ -15,7 +15,7 @@ const RootStack = createStackNavigator(
     Nutrition: Nutrition,
   },
   {
-    initialRouteName: 'Onboarding',
+    initialRouteName: 'Settings',
     defaultNavigationOptions: {
       header: null,
     },    
