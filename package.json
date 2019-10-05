@@ -13,7 +13,7 @@
     "react-native-gesture-handler": "1.0.15",
     "react-native-progress-bar-animated": "De-ma/react-native-progress-bar-animated",
     "react-native-simple-store": "2.0.0",
-    "react-navigation": "3.0.9",
+    "react-navigation": "3.13.0",
     "rn-apple-healthkit": "0.6.4"
   },
   "devDependencies": {
