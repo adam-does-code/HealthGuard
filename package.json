@@ -17,8 +17,8 @@
     "rn-apple-healthkit": "0.6.4"
   },
   "devDependencies": {
-    "babel-jest": "23.6.0",
-    "jest": "23.6.0",
+    "babel-jest": "30.5.1",
+    "jest": "30.5.1",
     "metro-react-native-babel-preset": "0.51.1",
     "react-test-renderer": "16.7.0"
   },
